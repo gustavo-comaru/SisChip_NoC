@@ -117,7 +117,7 @@ module tb #(parameter int X_ROUTERS = 8,
 
                         data_in[j] = {pos_x[7:0], pos_y[7:0], target_x[j][7:0], target_y[j][7:0]};
                         rx[j] = 1;
-                        $display("[%0d] - Router %2d: SENDING PACKET -> Size %0d -> from (%0d, %0d) to (%0d, %0d)", $time, j, packet_size[j], pos_x, pos_y, target_x[j], target_y[j]);
+                        $display("[%0d] - Router %2d: SENDING PACKET %d -> Size %0d -> from (%0d, %0d) to (%0d, %0d)", $time, j, (j * 100_000) + time_injection[j], packet_size[j], pos_x, pos_y, target_x[j], target_y[j]);
                     end
                     else if (index_rx[j] == 1) begin
                         data_in[j] = {packet_size[j]};
@@ -126,7 +126,7 @@ module tb #(parameter int X_ROUTERS = 8,
                         data_in[j] = {int'($time)};
                     end
                     else if (index_rx[j] == 3) begin
-                        automatic logic[31:0] packetNumber = {(j * 10_000_000) + time_injection[j]};
+                        automatic logic[31:0] packetNumber = {(j * 100_000) + time_injection[j]};
                         data_in[j] = packetNumber;
                     end
                     else if (index_rx[j] < packet_size[j] + 2) begin

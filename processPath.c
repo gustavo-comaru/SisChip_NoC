@@ -62,8 +62,10 @@ void main()
 
             if(repeated(packet_numbers, packets, packt_nb)==0)
             {
+                printf("PKT %d -> %d\n", packets, packt_nb);
                 packet_numbers[packets] = packt_nb;
                 packets++;
+
             }
             
 

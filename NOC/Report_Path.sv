@@ -31,7 +31,7 @@ module Report_Path(
                     end
                     2: begin
                         i = 1;
-                        port = "O";
+                        port = "W";
                     end
                     4: begin
                         i = 2;
@@ -48,6 +48,8 @@ module Report_Path(
                 endcase
 
                 $fwrite(fd,"PKT %0d %0d %0d %s\n", address_i[15:8], address_i[7:0], data_i[i], port);
+                flit_count <= 0;
+
             end
 
             if (flit_count != 0)
