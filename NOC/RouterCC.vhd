@@ -100,7 +100,7 @@ begin
 
     end generate buffers; 
 
-    SwitchControl : Entity work.SwitchControl
+    SwitchControl : Entity work.SwitchControl(AlgorithmOddEven)
     port map(
         clock => clock,
         reset => reset,
