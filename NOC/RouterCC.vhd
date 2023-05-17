@@ -75,7 +75,8 @@ component Report_Path is
         h_ack : in regNport;
         free_i : in regNport;
         address_i : in regmetadeflit;
-        data_i : in arrayNport_regflit
+        data_i : in arrayNport_regflit;
+        credit : in regNport
     );
 end component;
 
@@ -132,13 +133,14 @@ begin
 
     data_out <= data_out_int;
 
-    Rep : Report_Path
+    Report_p : Report_Path
     port map(
         clock => clock,
         h_ack => ack_h,
         free_i => free,
         address_i => address,
-        data_i => data_out_int
+        data_i => data_out_int,
+        credit => credit_i
         );
 
 end RouterCC;
