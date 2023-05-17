@@ -2,3 +2,5 @@ work
 transcript
 vsim.wlf
 modelsim.ini
+printPath
+procPath
