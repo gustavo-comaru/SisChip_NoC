@@ -114,6 +114,15 @@ add wave -noupdate -group ROUTER_03_03 /tb/data_out(15)
 add wave -noupdate -group ROUTER_03_03 /tb/tx(15)
 add wave -noupdate -group ROUTER_03_03 /tb/credit_i(15)
 
+#add wave -noupdate -group ROUTER_04_00 -color {Blue Violet} /tb/data_in(40)
+#add wave -noupdate -group ROUTER_04_00 -color {Blue Violet} /tb/rx(40)
+#add wave -noupdate -group ROUTER_04_00 -color {Blue Violet} /tb/credit_o(40)
+#add wave -noupdate -group ROUTER_04_00 /tb/data_out(40)
+#add wave -noupdate -group ROUTER_04_00 /tb/tx(40)
+#add wave -noupdate -group ROUTER_04_00 /tb/credit_i(40)
+#add wave -noupdate -group ROUTER_04_00 /tb/noc1/noc(40)/router/free
+
+
 TreeUpdate [SetDefaultTree]
 quietly wave cursor active 1
 configure wave -namecolwidth 249
